@@ -109,140 +109,88 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_MCAMximokmkm_1(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2"><strong>sgrodovia</strong><br />' + (feature.properties['sgrodovia'] !== null ? autolinker.link(String(feature.properties['sgrodovia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>nukminicia</strong><br />' + (feature.properties['nukminicia'] !== null ? autolinker.link(String(feature.properties['nukminicia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>nukmfinal</strong><br />' + (feature.properties['nukmfinal'] !== null ? autolinker.link(String(feature.properties['nukmfinal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>sgregional</strong><br />' + (feature.properties['sgregional'] !== null ? autolinker.link(String(feature.properties['sgregional']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Extensao</strong><br />' + (feature.properties['Extensao'] !== null ? autolinker.link(String(feature.properties['Extensao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>MCA_Medio</strong><br />' + (feature.properties['MCA_Medio'] !== null ? autolinker.link(String(feature.properties['MCA_Medio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>MCA_Maximo</strong><br />' + (feature.properties['MCA_Maximo'] !== null ? autolinker.link(String(feature.properties['MCA_Maximo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_01_Medi</strong><br />' + (feature.properties['AS_01_Medi'] !== null ? autolinker.link(String(feature.properties['AS_01_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_01_Maxi</strong><br />' + (feature.properties['AS_01_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_01_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_02_Medi</strong><br />' + (feature.properties['AS_02_Medi'] !== null ? autolinker.link(String(feature.properties['AS_02_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_02_Maxi</strong><br />' + (feature.properties['AS_02_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_02_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_03_Medi</strong><br />' + (feature.properties['AS_03_Medi'] !== null ? autolinker.link(String(feature.properties['AS_03_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_03_Maxi</strong><br />' + (feature.properties['AS_03_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_03_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_04_Medi</strong><br />' + (feature.properties['AS_04_Medi'] !== null ? autolinker.link(String(feature.properties['AS_04_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_04_Maxi</strong><br />' + (feature.properties['AS_04_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_04_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_05_Medi</strong><br />' + (feature.properties['AS_05_Medi'] !== null ? autolinker.link(String(feature.properties['AS_05_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_05_Maxi</strong><br />' + (feature.properties['AS_05_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_05_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_06_Medi</strong><br />' + (feature.properties['AS_06_Medi'] !== null ? autolinker.link(String(feature.properties['AS_06_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_06_Maxi</strong><br />' + (feature.properties['AS_06_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_06_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_07_Medi</strong><br />' + (feature.properties['AS_07_Medi'] !== null ? autolinker.link(String(feature.properties['AS_07_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_07_Maxi</strong><br />' + (feature.properties['AS_07_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_07_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_08_Medi</strong><br />' + (feature.properties['AS_08_Medi'] !== null ? autolinker.link(String(feature.properties['AS_08_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_08_Maxi</strong><br />' + (feature.properties['AS_08_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_08_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_09_Medi</strong><br />' + (feature.properties['AS_09_Medi'] !== null ? autolinker.link(String(feature.properties['AS_09_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_09_Maxi</strong><br />' + (feature.properties['AS_09_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_09_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_10_Medi</strong><br />' + (feature.properties['AS_10_Medi'] !== null ? autolinker.link(String(feature.properties['AS_10_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_10_Maxi</strong><br />' + (feature.properties['AS_10_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_10_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_11_Medi</strong><br />' + (feature.properties['AS_11_Medi'] !== null ? autolinker.link(String(feature.properties['AS_11_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_11_Maxi</strong><br />' + (feature.properties['AS_11_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_11_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_12_Medi</strong><br />' + (feature.properties['AS_12_Medi'] !== null ? autolinker.link(String(feature.properties['AS_12_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_12_Maxi</strong><br />' + (feature.properties['AS_12_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_12_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_13_Medi</strong><br />' + (feature.properties['AS_13_Medi'] !== null ? autolinker.link(String(feature.properties['AS_13_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_13_Maxi</strong><br />' + (feature.properties['AS_13_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_13_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_14_Medi</strong><br />' + (feature.properties['AS_14_Medi'] !== null ? autolinker.link(String(feature.properties['AS_14_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_14_Maxi</strong><br />' + (feature.properties['AS_14_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_14_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_15_Medi</strong><br />' + (feature.properties['AS_15_Medi'] !== null ? autolinker.link(String(feature.properties['AS_15_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_15_Maxi</strong><br />' + (feature.properties['AS_15_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_15_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
+				function pop_MCAMximokmkm_1(feature, layer) {
+			layer.on({
+				mouseout: function(e) {
+					if (typeof layer.closePopup == 'function') {
+						layer.closePopup();
+					} else {
+						layer.eachLayer(function(feature) {
+							feature.closePopup();
+						});
+					}
+				},
+				mouseover: highlightFeature,
+			});
+
+			 var popupContent = '<table style="width: 100%; font-size: 12px;"><tr>';
+
+			// Primeira coluna
+			popupContent += '<td style="vertical-align: top; width: 50%; padding-right: 10px;">' +
+				'<strong>fid</strong><br>' + feature.properties['fid'] + '<br>' +
+				'<strong>sgrodovia</strong><br>' + feature.properties['sgrodovia'] + '<br>' +
+				'<strong>Rodovia</strong><br>' + feature.properties['Rodovia'] + '<br>' +
+				'<strong>Extensao</strong><br>' + feature.properties['Extensao'] + '<br>' +
+				'<strong>INICIO_TRE</strong><br>' + feature.properties['INICIO_TRE'] + '<br>' +
+				'<strong>FIM_TRECHO</strong><br>' + feature.properties['FIM_TRECHO'] + '<br>' +
+				'<strong>Situacao</strong><br>' + feature.properties['Situacao'] + '<br>' +
+				'<strong>classe</strong><br>' + feature.properties['classe'] + '<br>' +
+				'<strong>Trecho</strong><br>' + feature.properties['Trecho'] + '<br>' +
+				'</td>';
+
+			// Segunda coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_01_Medi</strong><br>' + feature.properties['AS_01_Medi'] + '<br>' +
+				'<strong>AS_01_Maxi</strong><br>' + feature.properties['AS_01_Maxi'] + '<br>' +
+				'<strong>AS_02_Medi</strong><br>' + feature.properties['AS_02_Medi'] + '<br>' +
+				'<strong>AS_02_Maxi</strong><br>' + feature.properties['AS_02_Maxi'] + '<br>' +
+				'<strong>AS_03_Medi</strong><br>' + feature.properties['AS_03_Medi'] + '<br>' +
+				'<strong>AS_03_Maxi</strong><br>' + feature.properties['AS_03_Maxi'] + '<br>' +
+				'<strong>AS_04_Medi</strong><br>' + feature.properties['AS_04_Medi'] + '<br>' +
+				'<strong>AS_04_Maxi</strong><br>' + feature.properties['AS_04_Maxi'] + '<br>' +
+				'</td>';
+
+			// terceira coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_05_Medi</strong><br>' + feature.properties['AS_05_Medi'] + '<br>' +
+				'<strong>AS_05_Maxi</strong><br>' + feature.properties['AS_05_Maxi'] + '<br>' +
+				'<strong>AS_06_Medi</strong><br>' + feature.properties['AS_06_Medi'] + '<br>' +
+				'<strong>AS_06_Maxi</strong><br>' + feature.properties['AS_06_Maxi'] + '<br>' +
+				'<strong>AS_07_Medi</strong><br>' + feature.properties['AS_07_Medi'] + '<br>' +
+				'<strong>AS_07_Maxi</strong><br>' + feature.properties['AS_07_Maxi'] + '<br>' +
+				'<strong>AS_08_Medi</strong><br>' + feature.properties['AS_08_Medi'] + '<br>' +
+				'<strong>AS_08_Maxi</strong><br>' + feature.properties['AS_08_Maxi'] + '<br>' +
+				'</td>';
+				
+			// quarta coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_09_Medi</strong><br>' + feature.properties['AS_09_Medi'] + '<br>' +
+				'<strong>AS_09_Maxi</strong><br>' + feature.properties['AS_09_Maxi'] + '<br>' +
+				'<strong>AS_10_Medi</strong><br>' + feature.properties['AS_10_Medi'] + '<br>' +
+				'<strong>AS_10_Maxi</strong><br>' + feature.properties['AS_10_Maxi'] + '<br>' +
+				'<strong>AS_11_Medi</strong><br>' + feature.properties['AS_11_Medi'] + '<br>' +
+				'<strong>AS_11_Maxi</strong><br>' + feature.properties['AS_11_Maxi'] + '<br>' +
+				'<strong>AS_12_Medi</strong><br>' + feature.properties['AS_12_Medi'] + '<br>' +
+				'<strong>AS_12_Maxi</strong><br>' + feature.properties['AS_12_Maxi'] + '<br>' +
+				'</td>';
+				
+			// quinta coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_13_Medi</strong><br>' + feature.properties['AS_13_Medi'] + '<br>' +
+				'<strong>AS_13_Maxi</strong><br>' + feature.properties['AS_13_Maxi'] + '<br>' +
+				'<strong>AS_14_Medi</strong><br>' + feature.properties['AS_14_Medi'] + '<br>' +
+				'<strong>AS_14_Maxi</strong><br>' + feature.properties['AS_14_Maxi'] + '<br>' +
+				'<strong>AS_15_Medi</strong><br>' + feature.properties['AS_15_Medi'] + '<br>' +
+				'<strong>AS_15_Maxi</strong><br>' + feature.properties['AS_15_Maxi'] + '<br>' +
+				'</td>';	
+				
+				
+			popupContent += '</tr></table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
 			});
-			layer.bindPopup(content, { maxWidth: 400, maxHeight: 3000 });
+			layer.bindPopup(content, { maxWidth: 400, maxHeight: 400 });
         }
 
         function style_MCAMximokmkm_1_0(feature) {
@@ -404,130 +352,74 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2"><strong>fid</strong><br />' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>sgrodovia</strong><br />' + (feature.properties['sgrodovia'] !== null ? autolinker.link(String(feature.properties['sgrodovia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>nukminicia</strong><br />' + (feature.properties['nukminicia'] !== null ? autolinker.link(String(feature.properties['nukminicia']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>nukmfinal</strong><br />' + (feature.properties['nukmfinal'] !== null ? autolinker.link(String(feature.properties['nukmfinal']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>sgregional</strong><br />' + (feature.properties['sgregional'] !== null ? autolinker.link(String(feature.properties['sgregional']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Extensao</strong><br />' + (feature.properties['Extensao'] !== null ? autolinker.link(String(feature.properties['Extensao']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Tipo</strong><br />' + (feature.properties['Tipo'] !== null ? autolinker.link(String(feature.properties['Tipo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>MCA_Medio</strong><br />' + (feature.properties['MCA_Medio'] !== null ? autolinker.link(String(feature.properties['MCA_Medio']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>MCA_Maximo</strong><br />' + (feature.properties['MCA_Maximo'] !== null ? autolinker.link(String(feature.properties['MCA_Maximo']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_01_Medi</strong><br />' + (feature.properties['AS_01_Medi'] !== null ? autolinker.link(String(feature.properties['AS_01_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_01_Maxi</strong><br />' + (feature.properties['AS_01_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_01_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_02_Medi</strong><br />' + (feature.properties['AS_02_Medi'] !== null ? autolinker.link(String(feature.properties['AS_02_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_02_Maxi</strong><br />' + (feature.properties['AS_02_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_02_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_03_Medi</strong><br />' + (feature.properties['AS_03_Medi'] !== null ? autolinker.link(String(feature.properties['AS_03_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_03_Maxi</strong><br />' + (feature.properties['AS_03_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_03_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_04_Medi</strong><br />' + (feature.properties['AS_04_Medi'] !== null ? autolinker.link(String(feature.properties['AS_04_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_04_Maxi</strong><br />' + (feature.properties['AS_04_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_04_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_05_Medi</strong><br />' + (feature.properties['AS_05_Medi'] !== null ? autolinker.link(String(feature.properties['AS_05_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_05_Maxi</strong><br />' + (feature.properties['AS_05_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_05_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_06_Medi</strong><br />' + (feature.properties['AS_06_Medi'] !== null ? autolinker.link(String(feature.properties['AS_06_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_06_Maxi</strong><br />' + (feature.properties['AS_06_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_06_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_07_Medi</strong><br />' + (feature.properties['AS_07_Medi'] !== null ? autolinker.link(String(feature.properties['AS_07_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_07_Maxi</strong><br />' + (feature.properties['AS_07_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_07_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_08_Medi</strong><br />' + (feature.properties['AS_08_Medi'] !== null ? autolinker.link(String(feature.properties['AS_08_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_08_Maxi</strong><br />' + (feature.properties['AS_08_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_08_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_09_Medi</strong><br />' + (feature.properties['AS_09_Medi'] !== null ? autolinker.link(String(feature.properties['AS_09_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_09_Maxi</strong><br />' + (feature.properties['AS_09_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_09_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_10_Medi</strong><br />' + (feature.properties['AS_10_Medi'] !== null ? autolinker.link(String(feature.properties['AS_10_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_10_Maxi</strong><br />' + (feature.properties['AS_10_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_10_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_11_Medi</strong><br />' + (feature.properties['AS_11_Medi'] !== null ? autolinker.link(String(feature.properties['AS_11_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_11_Maxi</strong><br />' + (feature.properties['AS_11_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_11_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_12_Medi</strong><br />' + (feature.properties['AS_12_Medi'] !== null ? autolinker.link(String(feature.properties['AS_12_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_12_Maxi</strong><br />' + (feature.properties['AS_12_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_12_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_13_Medi</strong><br />' + (feature.properties['AS_13_Medi'] !== null ? autolinker.link(String(feature.properties['AS_13_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_13_Maxi</strong><br />' + (feature.properties['AS_13_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_13_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_14_Medi</strong><br />' + (feature.properties['AS_14_Medi'] !== null ? autolinker.link(String(feature.properties['AS_14_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_14_Maxi</strong><br />' + (feature.properties['AS_14_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_14_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>AS_15_Medi</strong><br />' + (feature.properties['AS_15_Medi'] !== null ? autolinker.link(String(feature.properties['AS_15_Medi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['AS_15_Maxi'] !== null ? autolinker.link(String(feature.properties['AS_15_Maxi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
+            var popupContent = '<table style="width: 100%; font-size: 12px;"><tr>';
+
+			// Primeira coluna
+			popupContent += '<td style="vertical-align: top; width: 50%; padding-right: 10px;">' +
+				'<strong>fid</strong><br>' + feature.properties['fid'] + '<br>' +
+				'<strong>sgrodovia</strong><br>' + feature.properties['sgrodovia'] + '<br>' +
+				'<strong>Rodovia</strong><br>' + feature.properties['Rodovia'] + '<br>' +
+				'<strong>Extensao</strong><br>' + feature.properties['Extensao'] + '<br>' +
+				'<strong>INICIO_TRE</strong><br>' + feature.properties['INICIO_TRE'] + '<br>' +
+				'<strong>FIM_TRECHO</strong><br>' + feature.properties['FIM_TRECHO'] + '<br>' +
+				'<strong>Situacao</strong><br>' + feature.properties['Situacao'] + '<br>' +
+				'<strong>classe</strong><br>' + feature.properties['classe'] + '<br>' +
+				'<strong>Trecho</strong><br>' + feature.properties['Trecho'] + '<br>' +
+				'</td>';
+
+			// Segunda coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_01_Medi</strong><br>' + feature.properties['AS_01_Medi'] + '<br>' +
+				'<strong>AS_01_Maxi</strong><br>' + feature.properties['AS_01_Maxi'] + '<br>' +
+				'<strong>AS_02_Medi</strong><br>' + feature.properties['AS_02_Medi'] + '<br>' +
+				'<strong>AS_02_Maxi</strong><br>' + feature.properties['AS_02_Maxi'] + '<br>' +
+				'<strong>AS_03_Medi</strong><br>' + feature.properties['AS_03_Medi'] + '<br>' +
+				'<strong>AS_03_Maxi</strong><br>' + feature.properties['AS_03_Maxi'] + '<br>' +
+				'<strong>AS_04_Medi</strong><br>' + feature.properties['AS_04_Medi'] + '<br>' +
+				'<strong>AS_04_Maxi</strong><br>' + feature.properties['AS_04_Maxi'] + '<br>' +
+				'</td>';
+
+			// terceira coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_05_Medi</strong><br>' + feature.properties['AS_05_Medi'] + '<br>' +
+				'<strong>AS_05_Maxi</strong><br>' + feature.properties['AS_05_Maxi'] + '<br>' +
+				'<strong>AS_06_Medi</strong><br>' + feature.properties['AS_06_Medi'] + '<br>' +
+				'<strong>AS_06_Maxi</strong><br>' + feature.properties['AS_06_Maxi'] + '<br>' +
+				'<strong>AS_07_Medi</strong><br>' + feature.properties['AS_07_Medi'] + '<br>' +
+				'<strong>AS_07_Maxi</strong><br>' + feature.properties['AS_07_Maxi'] + '<br>' +
+				'<strong>AS_08_Medi</strong><br>' + feature.properties['AS_08_Medi'] + '<br>' +
+				'<strong>AS_08_Maxi</strong><br>' + feature.properties['AS_08_Maxi'] + '<br>' +
+				'</td>';
+				
+			// quarta coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_09_Medi</strong><br>' + feature.properties['AS_09_Medi'] + '<br>' +
+				'<strong>AS_09_Maxi</strong><br>' + feature.properties['AS_09_Maxi'] + '<br>' +
+				'<strong>AS_10_Medi</strong><br>' + feature.properties['AS_10_Medi'] + '<br>' +
+				'<strong>AS_10_Maxi</strong><br>' + feature.properties['AS_10_Maxi'] + '<br>' +
+				'<strong>AS_11_Medi</strong><br>' + feature.properties['AS_11_Medi'] + '<br>' +
+				'<strong>AS_11_Maxi</strong><br>' + feature.properties['AS_11_Maxi'] + '<br>' +
+				'<strong>AS_12_Medi</strong><br>' + feature.properties['AS_12_Medi'] + '<br>' +
+				'<strong>AS_12_Maxi</strong><br>' + feature.properties['AS_12_Maxi'] + '<br>' +
+				'</td>';
+				
+			// quinta coluna
+			popupContent += '<td style="vertical-align: top; width: 50%;">' +
+				'<strong>AS_13_Medi</strong><br>' + feature.properties['AS_13_Medi'] + '<br>' +
+				'<strong>AS_13_Maxi</strong><br>' + feature.properties['AS_13_Maxi'] + '<br>' +
+				'<strong>AS_14_Medi</strong><br>' + feature.properties['AS_14_Medi'] + '<br>' +
+				'<strong>AS_14_Maxi</strong><br>' + feature.properties['AS_14_Maxi'] + '<br>' +
+				'<strong>AS_15_Medi</strong><br>' + feature.properties['AS_15_Medi'] + '<br>' +
+				'<strong>AS_15_Maxi</strong><br>' + feature.properties['AS_15_Maxi'] + '<br>' +
+				'</td>';	
+				
+				
+			popupContent += '</tr></table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
 			});
-			layer.bindPopup(content, { maxWidth: 400, maxHeight: 3000 });
+			layer.bindPopup(content, { maxWidth: 400, maxHeight: 400 });
         }
 
         function style_MCAmdiokmkm_2_0(feature) {
@@ -747,7 +639,7 @@
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
 			});
-			layer.bindPopup(content, { maxWidth: 1000, maxHeight: 400 });
+			layer.bindPopup(content, { maxWidth: 400, maxHeight: 400 });
         }
 
         function style_ViaMaresLCPs_8_0(feature) {
